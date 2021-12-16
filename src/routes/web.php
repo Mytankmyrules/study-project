@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('guest')->group(static function () {
+    Route::get('register', fn () => view('guest.register'));
+    Route::get('login', [
+        'as' => 'login',
+        'uses' => fn () => view('guest.login')
+]);
+
+    Route::post('register', [GuestController::class, 'register']);
+    Route::post('login', [GuestController::class, 'login']);
+});
+
+Route::middleware('auth')->group(static function () {
+    Route::get('/', function(){
+        return view('welcome');
+    });
 });
