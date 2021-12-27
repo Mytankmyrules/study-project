@@ -13,19 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('guest')->group(static function () {
-    Route::get('register', fn () => view('guest.register'));
-    Route::get('login', [
-        'as' => 'login',
-        'uses' => fn () => view('guest.login')
-]);
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/guest', function () {
+    return view('guest');
+});
+Route::get('/about', function () {
+    return view('about');
+}); 
+Route::name('user.')->group(function(){
+    Route::view('/signed','signed')->middleware(middleware:'Auth')->name(name:'signed');
 
-    Route::post('register', [GuestController::class, 'register']);
-    Route::post('login', [GuestController::class, 'login']);
+    Route::get('/login',function(){
+        if(Auth::check()){
+            return redirect(route(name:'user.signed'));
+        }
+        return view(view:'login');
+    })->name(name:'login');
+
+    //Route::post('/login', [])
 });
 
-Route::middleware('auth')->group(static function () {
-    Route::get('/', function(){
-        return view('welcome');
-    });
-});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

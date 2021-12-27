@@ -17,7 +17,7 @@ services:
       - ./docker/nginx/study-project.local.conf:/etc/nginx/conf.d/study-project.local.conf
     depends_on:
       - app
-  db:
+  db-project:
     platform: linux/x86_64
     image: mysql:8.0.23
     ports:
