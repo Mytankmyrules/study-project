@@ -2,7 +2,7 @@
 
 @section('content')  
 <div class="row">
-        <div onclick="location.href='/BA'" style="cursor: pointer" class="col">
+        <div onclick="location.href='/BA'" style="cursor: pointer"  class="col">
           <div class="card shadow-lg" style="width: 417px; height: 420px">
             <img src="/images/BA.jpg" class="w-100" alt="Redirect to BA-room">
             <div class="card-body">
