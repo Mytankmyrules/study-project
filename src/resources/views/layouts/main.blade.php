@@ -6,34 +6,35 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <title>it-Forum</title>
+    <title>IT.Forum</title>
 </head>
 <body>
     <div class="container mt-3 " id="main-container">
        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav me-auto mb-4 mb-md-0">
                 <li class="nav-item">
-                    <a class="nav-link text-white" aria-current="page" href="/">Home</a>
+                    <a class="nav-link text-white" aria-current="page" href="/"><button type="button" class="btn btn-light">H</button></a>
                 </li>
             </ul>
+            <h1 style="text-align:center" class="text-white">IT.Forum</h1>
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ms-auto text-white">
+            <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('login') }}"><button type="button" class="btn btn-light">Login</button></a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}"><button type="button" class="btn btn-light">Register</button></a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -51,13 +52,14 @@
                             </li>
                         @endguest
                     </ul>
-        <form class="d-flex p-2">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
-        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="3000">
-            <div class="carousel-inner shadow-sm">
+            <div class="form-inline">
+            <form method="get" action="https://www.google.com/search" target="_blank">
+                <input type="search" id="form1" class="form-control" placeholder="Google search..." name="q"/>
+            </form>
+            </div>     
+        </nav>
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="false" data-bs-interval="3000">
+            <div class="carousel-inner">
                 <div class="carousel-item active">
                 <img src="/images/ad.png" class="d-block w-100" alt="...">
                 </div>
@@ -68,11 +70,11 @@
                 <img src="/images/birds.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
