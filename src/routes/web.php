@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TopicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,17 @@ Route::get('/BA', function () {
 });
 //Auth::routes();
 Route::auth();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/BA', [TopicController::class, 'addTopic']);
+
+Route::post('/add', [TopicController::class, 'createTopic']);
+
+Route::get('/view', function () {
+    return view('topic/view');
+});
+
+//Route::get('/BA',[TopicController::class, 'deleteTopic']);
+
+//Route::get('/BA/{topic}',[TopicController::class, 'viewTopic'])->name('view');

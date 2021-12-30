@@ -13,7 +13,7 @@
        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav me-auto mb-4 mb-md-0">
                 <li class="nav-item">
-                    <a class="nav-link text-white" aria-current="page" href="/"><button type="button" class="btn btn-light">H</button></a>
+                    <a class="nav-link text-white" aria-current="page" href="/"><button type="button" class="btn btn-light">Home</button></a>
                 </li>
             </ul>
             <h1 style="text-align:center" class="text-white">IT.Forum</h1>

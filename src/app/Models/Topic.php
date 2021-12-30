@@ -1,18 +1,10 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
 
-class Topic 
+
+class Topic extends Model
 {
-   protected string $table = 'topic';
-
-   protected array $fillable = [
-       'topic',
-       'name',
-   ];
-
-   protected array $casts = [
-       'created at' => 'datetime',
-       'updated at' => 'datetime'
-   ];
+    public $timestamps = false;  
 }

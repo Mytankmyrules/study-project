@@ -13,7 +13,7 @@ class CreateTopicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('topics', function (Blueprint $table) {
+        Schema::create('topic', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -29,3 +29,4 @@ class CreateTopicsTable extends Migration
         Schema::dropIfExists('topics');
     }
 }
+
